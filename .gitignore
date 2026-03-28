@@ -264,3 +264,6 @@ Thumbs.db
 # 
 *.parquet
 list
+
+keys/
+*.json
