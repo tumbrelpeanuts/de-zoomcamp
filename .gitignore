@@ -1,0 +1,44 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.python-version
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Secrets / credentials
+.env
+.env.*
+*.json.key
+gcp-credentials.json
+service-account*.json
+*.pem
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
+crash.log
+
+# Data files
+*.csv
+*.parquet
+*.gz
+data/
+
+# Editors
+.vscode/
+.idea/
