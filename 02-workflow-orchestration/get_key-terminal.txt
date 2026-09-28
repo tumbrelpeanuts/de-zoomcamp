@@ -1,0 +1,27 @@
+
+1. Get key
+base64 -i keys/my-creds.json
+
+
+2. add to docker compose
+
+
+  kestra:
+    image: kestra/kestra:v1.1
+    pull_policy: always
+    user: "root"
+    command: server standalone
+    volumes:
+      - kestra_data:/app/storage
+      - /var/run/docker.sock:/var/run/docker.sock
+      - kestra_tmp:/tmp/kestra-wd
+      - ./keys:/app/keys # add this
+    environment:
+      SECRET_GCP_CREDS: <paste your base64 string here> # add this
+      KESTRA_CONFIGURATION: |
+        ...
+
+3. restart the stack
+docker-compose down
+docker-compose up -d
+
